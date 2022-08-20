@@ -108,18 +108,38 @@ public class VistaPrincipal extends javax.swing.JFrame {
         nuevaDivisa.setValor(valor);
         //capturando el valor del comboBox
         String captura = jComboBoxEscoger.getSelectedItem().toString();
-        if(captura == "De pesos a dolares" || captura == "De pesos a euros"){
+        if(captura == "De Pesos Colombianos a Dolares" || captura == "De Pesos Colombianos a Euros"){
             nuevaDivisa.setTasa(0.00023);
             //nuevaDivisa.convertir(valor,nuevaDivisa.getTasa());
             jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));       
-        }else if (captura == "De pesos a yenes"){
+        }else if (captura == "De Pesos Colombianos a Yenes"){
             nuevaDivisa.setTasa(0.03115);
             jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
-        }else if (captura == "De pesos a soles"){
+        }else if (captura == "De Pesos Colombianos a Soles Peruanos"){
             nuevaDivisa.setTasa(0.00088);
             jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
-        }
-            
+        }else if(captura == "De Pesos Colombianos a Pesos Argentinos"){
+            nuevaDivisa.setTasa(0.03095);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Pesos Bolivianos"){
+            nuevaDivisa.setTasa(0.00157);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Reales Brasileros"){
+            nuevaDivisa.setTasa(0.00118);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Pesos Chileno"){
+            nuevaDivisa.setTasa(0.21481);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Colones Costarricense"){
+            nuevaDivisa.setTasa(0.15157);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Rupias Hindúes"){
+            nuevaDivisa.setTasa(0.01818);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }else if(captura == "De Pesos Colombianos a Won Corenao"){
+            nuevaDivisa.setTasa(0.30382);
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa())));
+        }      
     }//GEN-LAST:event_jButtonConvertirActionPerformed
 
     /**
