@@ -1,5 +1,7 @@
 
-package src;
+package Vistas;
+
+import src.Divisas;
 
 public class VistaPrincipal extends javax.swing.JFrame {
     double valor;
@@ -22,83 +24,68 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextValor = new javax.swing.JTextField();
         jComboBoxEscoger = new javax.swing.JComboBox<>();
+        jLabelSalida = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButtonConvertir = new javax.swing.JButton();
-        jLabelSalida = new javax.swing.JLabel();
+        jButtonCambiar = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 102, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Conversor de divisas");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 238, 32));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Digite el valor a convertir");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jTextValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextValorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 106, 39));
 
         jComboBoxEscoger.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Pesos Colombianos a Dolares", "De Pesos Colombianos a Euros", "De Pesos Colombianos a Yenes", "De Pesos Colombianos a Soles Peruanos", "De Pesos Colombianos a Pesos Argentinos", "De Pesos Colombianos a Pesos Bolivianos", "De Pesos Colombianos a Reales Brasileros", "De Pesos Colombianos a Pesos Chilenos", "De Pesos Colombianos a Colones Costarricense", "De Pesos Colombianos a Rupias Hindúes", "De Pesos Colombianos a Won Corenao" }));
+        getContentPane().add(jComboBoxEscoger, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+
+        jLabelSalida.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabelSalida.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSalida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0)));
+        getContentPane().add(jLabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 155, 31));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("Esoja la divisa");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Escoja la divisa");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         jButtonConvertir.setBackground(new java.awt.Color(51, 51, 255));
+        jButtonConvertir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonConvertir.setText("Convertir");
         jButtonConvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConvertirActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonConvertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 155, 35));
 
-        jLabelSalida.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabelSalida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0)));
+        jButtonCambiar.setFont(new java.awt.Font("Arial Narrow", 1, 11)); // NOI18N
+        jButtonCambiar.setText("Desea calcular otra divisa");
+        jButtonCambiar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCambiar.setRolloverEnabled(false);
+        getContentPane().add(jButtonCambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 160, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxEscoger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(jTextValor, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jButtonConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabelSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextValor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jComboBoxEscoger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/fondo.jpg"))); // NOI18N
+        jLabelFondo.setText("jLabel4");
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 260));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -144,6 +131,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         }      
     }//GEN-LAST:event_jButtonConvertirActionPerformed
 
+    private void jTextValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextValorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,11 +171,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCambiar;
     private javax.swing.JButton jButtonConvertir;
     private javax.swing.JComboBox<String> jComboBoxEscoger;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelSalida;
     private javax.swing.JTextField jTextValor;
     // End of variables declaration//GEN-END:variables
