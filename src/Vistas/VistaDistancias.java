@@ -47,7 +47,7 @@ public class VistaDistancias extends javax.swing.JFrame {
         jLabelTitulo2.setText("Escoja la unidad ");
         getContentPane().add(jLabelTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        jComboBoxUnidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De centímetros a metros", "De milímetros a metros", "De micras a metros", "De metros a decámetros", "De metros a hectómetros", "De metros a megámetros", "De mtros a UA", "De metros a Ly" }));
+        jComboBoxUnidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De centímetros a metros", "De milímetros a metros", "De micras a metros", "De metros a decámetros", "De metros a hectómetros", "De metros a kilómetros", "De metros a UA", "De metros a Ly" }));
         getContentPane().add(jComboBoxUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 200, 40));
 
         jLabel1.setOpaque(true);
@@ -56,7 +56,7 @@ public class VistaDistancias extends javax.swing.JFrame {
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 51)));
         jLabelResultado.setOpaque(true);
-        getContentPane().add(jLabelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 130, 40));
+        getContentPane().add(jLabelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 200, 40));
 
         jButtonConvertir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonConvertir.setText("Convertir");
@@ -68,6 +68,11 @@ public class VistaDistancias extends javax.swing.JFrame {
         getContentPane().add(jButtonConvertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 120, 40));
 
         jButtonseguir.setText("Calcular otra medida");
+        jButtonseguir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonseguirActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonseguir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 130, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/distancia.jpg"))); // NOI18N
@@ -85,8 +90,35 @@ public class VistaDistancias extends javax.swing.JFrame {
         if(captura == "De centímetros a metros"){
             nuevaDistancias.setFactor(0.01);
             jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" metros");
+        }else if(captura == "De milímetros a metros"){
+            nuevaDistancias.setFactor(0.001);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" metros");
+        }else if(captura == "De micras a metros"){
+            nuevaDistancias.setFactor(0.0001);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" metros");
+        }
+        else if(captura == "De metros a decámetros"){
+            nuevaDistancias.setFactor(0.01);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" decámetros");
+        }else if(captura == "De metros a hectómetros"){
+            nuevaDistancias.setFactor(0.001);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" hectómetros");
+        }else if(captura == "De metros a kilómetros"){
+            nuevaDistancias.setFactor(0.0001);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" kilómetros");
+        }else if(captura == "De metros a UA"){
+            nuevaDistancias.setFactor(0.00000001495);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" U.anstrónomica");
+        }else if(captura == "De metros a Ly"){
+            nuevaDistancias.setFactor(0.000000000000946);
+            jLabelResultado.setText(String.valueOf(nuevaDistancias.calcularDistancia(distancia, nuevaDistancias.getFactor()))+" años luz");
         }
     }//GEN-LAST:event_jButtonConvertirActionPerformed
+
+    private void jButtonseguirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonseguirActionPerformed
+        jTextFieldUnidades.setText("");
+        jLabelResultado.setText("");
+    }//GEN-LAST:event_jButtonseguirActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
