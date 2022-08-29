@@ -92,6 +92,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jButtonVolver.setBackground(new java.awt.Color(51, 255, 255));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/fondo.jpg"))); // NOI18N
@@ -150,6 +155,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jTextValor.setText("");
         jLabelSalida.setText("");
     }//GEN-LAST:event_jButtonCambiarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        VistaPrincipal cerrarVista = new VistaPrincipal();
+        Entrada principal = new Entrada();        
+        principal.setVisible(true);
+        this.setVisible(false);        
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments

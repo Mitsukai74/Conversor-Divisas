@@ -24,6 +24,7 @@ public class VistaDistancias extends javax.swing.JFrame {
         jLabelResultado = new javax.swing.JLabel();
         jButtonConvertir = new javax.swing.JButton();
         jButtonseguir = new javax.swing.JButton();
+        jButtonVolver = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -75,6 +76,16 @@ public class VistaDistancias extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonseguir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 130, 40));
 
+        jButtonVolver.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/distancia.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 290));
 
@@ -119,6 +130,12 @@ public class VistaDistancias extends javax.swing.JFrame {
         jTextFieldUnidades.setText("");
         jLabelResultado.setText("");
     }//GEN-LAST:event_jButtonseguirActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Entrada principal = new Entrada();        
+        principal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVolverActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -154,6 +171,7 @@ public class VistaDistancias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConvertir;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JButton jButtonseguir;
     private javax.swing.JComboBox<String> jComboBoxUnidades;
     private javax.swing.JLabel jLabel1;
