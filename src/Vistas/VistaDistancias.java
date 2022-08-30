@@ -49,7 +49,7 @@ public class VistaDistancias extends javax.swing.JFrame {
         getContentPane().add(jLabelTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jComboBoxUnidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De centímetros a metros", "De milímetros a metros", "De micras a metros", "De metros a decámetros", "De metros a hectómetros", "De metros a kilómetros", "De metros a UA", "De metros a Ly" }));
-        getContentPane().add(jComboBoxUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 200, 40));
+        getContentPane().add(jComboBoxUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 220, 40));
 
         jLabel1.setOpaque(true);
         jLabelResultado.setBackground(new java.awt.Color(255, 255, 102));
@@ -57,7 +57,7 @@ public class VistaDistancias extends javax.swing.JFrame {
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 51)));
         jLabelResultado.setOpaque(true);
-        getContentPane().add(jLabelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 200, 40));
+        getContentPane().add(jLabelResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 230, 40));
 
         jButtonConvertir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonConvertir.setText("Convertir");

@@ -61,7 +61,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabelSalida.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSalida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jLabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 155, 31));
+        getContentPane().add(jLabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 230, 31));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,7 +116,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         if(captura == "De Pesos Colombianos a Dolares" || captura == "De Pesos Colombianos a Euros"){
             nuevaDivisa.setTasa(0.00023);
             //nuevaDivisa.convertir(valor,nuevaDivisa.getTasa());
-            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa()))+" Euros");       
+            jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa()))+" Dolares");       
         }else if (captura == "De Pesos Colombianos a Yenes"){
             nuevaDivisa.setTasa(0.03115);
             jLabelSalida.setText(String.valueOf(nuevaDivisa.convertir(valor,nuevaDivisa.getTasa()))+" Yenes");
